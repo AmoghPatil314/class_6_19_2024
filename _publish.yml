@@ -1,0 +1,4 @@
+- source: project
+  quarto-pub:
+    - id: ff307886-3fa5-4607-85bc-6fd6eaf4e360
+      url: 'https://slyproton.quarto.pub/aaa'

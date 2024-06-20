@@ -5,3 +5,38 @@ title: "."
 This is a Quarto website.
 
 To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+
+```{r}
+
+install.packages("tidycensus")
+install.packages("dplyr")
+library(tidycensus)
+library(dplyr)
+
+
+# Set your Census API key
+census_api_key("315fdc565a7b5d694b12eeb3110071f7c3776530")
+
+# Load the tidycensus package and set the API key
+library(tidycensus)
+
+# Specify the variables for the educational attainment data
+vars <- c(bachelor_degree = "B15003_022")
+
+# Get the data for Los Angeles County, California
+la_edu_data <- get_acs(
+  geography = "tract",
+  variables = vars,
+  state = "CA",
+  county = "Los Angeles County",
+  year = 2021,  # Specify the year of the ACS data
+  survey = "acs5",
+  geometry = FALSE
+)
+
+# Display the first few rows of the data
+head(la_edu_data)
+
+```
+
+
